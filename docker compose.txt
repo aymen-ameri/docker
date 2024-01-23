@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  sql:
+    image: mysql:5.7.8
+    restart: unless-stopped
+    ports:
+      - 3307:3306
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+  backend:
+    image: aymena26/achate:12
+    restart: unless-stopped
+    ports:
+      - 8087:8087
+  front:
+    image: aymena26/frontapp:2  # Replace with the actual image for your front-end
+    restart: unless-stopped
+    ports:
+      - 80:80
+
+volumes:
+  db:

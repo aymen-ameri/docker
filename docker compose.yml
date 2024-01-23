@@ -1,0 +1,27 @@
+version: '3'
+services:
+  user:
+    image: aymena26/user:1
+    ports:
+      - "9003:9003"
+    depends_on:
+      - consul
+
+  departement:
+    image: aymena26/depar:1
+    ports:
+      - "9001:9001"
+    depends_on:
+      - consul
+
+  api:
+    image: apigat:1
+    ports:
+      - "8082:8082"
+    depends_on:
+      - consul
+
+  consul:
+    image: consul:1.15.4
+    ports:
+      - "8500:8500"

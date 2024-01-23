@@ -1,25 +1,27 @@
-version: '3.8'
-
+version: '3'
 services:
-  sql:
-    image: mysql:5.7.8
-    restart: unless-stopped
+  user:
+    image: aymena26/user:1
     ports:
-      - 3307:3306
-    volumes:
-      - db:/var/lib/mysql
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-  backend:
-    image: aymena26/achate:12
-    restart: unless-stopped
-    ports:
-      - 8087:8087
-  front:
-    image: aymena26/frontapp:2  # Replace with the actual image for your front-end
-    restart: unless-stopped
-    ports:
-      - 80:80
+      - "9003:9003"
+    depends_on:
+      - consul
 
-volumes:
-  db:
+  departement:
+    image: aymena26/depar:1
+    ports:
+      - "9001:9001"
+    depends_on:
+      - consul
+
+  api:
+    image: apigat:1
+    ports:
+      - "8082:8082"
+    depends_on:
+      - consul
+
+  consul:
+    image: consul:1.15.4
+    ports:
+      - "8500:8500"

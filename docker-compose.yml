@@ -8,7 +8,7 @@ services:
       - consul
 
   departement:
-    image: aymena26/depar:1
+    image: aymena26/dep:1
     ports:
       - "9001:9001"
     depends_on:

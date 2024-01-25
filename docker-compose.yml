@@ -6,7 +6,6 @@ services:
       - "9003:9003"
     depends_on:
       - consul
-      - jaeger
 
   departement:
     image: aymena26/dep:1
@@ -14,7 +13,6 @@ services:
       - "9001:9001"
     depends_on:
       - consul
-      - jaeger
 
   api:
     image: aymena26/apigat:1
@@ -22,7 +20,6 @@ services:
       - "8082:8082"
     depends_on:
       - consul
-      - jaeger
 
   consul:
     image: consul:1.15.4

@@ -11,7 +11,7 @@ services:
   nest:
     image: aymena26/nest:1
     ports:
-      - "3002:3002"
+      - "9002:9002"
     depends_on:
       - consul
       - jaeger

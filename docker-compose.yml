@@ -11,7 +11,7 @@ services:
   test_service:
     image: aymena26/test_service:1
     ports:
-      - "3000:3000"
+      - "3002:3002"
     depends_on:
       - consul
       - jaeger

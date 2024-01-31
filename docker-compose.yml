@@ -8,8 +8,8 @@ services:
       - consul
       - jaeger
       
-  test_service:
-    image: aymena26/test_service:1
+  nest:
+    image: aymena26/nest:1
     ports:
       - "3002:3002"
     depends_on:

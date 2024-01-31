@@ -7,6 +7,14 @@ services:
     depends_on:
       - consul
       - jaeger
+      
+  test_service:
+    image: aymena26/test_service:1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - consul
+      - jaeger
 
   departement:
     image: aymena26/dep:1

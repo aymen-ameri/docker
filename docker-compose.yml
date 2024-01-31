@@ -15,7 +15,7 @@ services:
     depends_on:
       - consul
       - jaeger
-      - api
+      
 
   departement:
     image: aymena26/dep:1

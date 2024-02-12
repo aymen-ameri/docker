@@ -3,7 +3,7 @@ version: '3'
 services:
   nest:
     build:
-      context: ./home/aymen/Desktop/nest
+      
       dockerfile: Dockerfile
     container_name: nest_dev
     volumes:

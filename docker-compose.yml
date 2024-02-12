@@ -5,7 +5,7 @@ services:
     image: aymena26/nest:1
     container_name: nest
     volumes:
-      - /home/aymen/Desktop/nest/nest:/usr/src/app  # Mount the project directory
+      - /home/aymen/Desktop/nest/:/usr/src/app  # Mount the project directory
     ports:
       - "3002:3002"  # Map the ports
     depends_on:

@@ -1,8 +1,8 @@
 version: '3'
 
 services:
- nestjs:
-     image: aymena26/nest:1
+  nestjs:
+    image: aymena26/nest:1
     container_name: nest
     volumes:
       - /home/aymen/Desktop/nest:/usr/src/app

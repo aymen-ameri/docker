@@ -11,13 +11,17 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
 
-  departement:
+ departement:
     image: aymena26/dep:1
     ports:
       - "9001:9001"
     depends_on:
       - consul
       - jaeger
+    volumes:
+      - ./target:/app  # Mount the target directory to /app in the container
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
 
   api:
     image: aymena26/apigat:1

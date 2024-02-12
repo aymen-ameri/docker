@@ -1,16 +1,13 @@
 version: '3'
 
 services:
-  nest:
-    image: aymena26/nest:1
+  nestjs-app:
+    build: .
     container_name: nest
     volumes:
-      - /home/aymen/Desktop/nest/:/usr/src/app  # Mount the project directory
+      - /home/aymen/Desktop/nest3-main:/usr/src/app
     ports:
-      - "3002:3002"  # Map the ports
-    depends_on:
-      - consul
-      - jaeger
+      - "3002:3002"
     environment:
       - CHOKIDAR_USEPOLLING=true
 

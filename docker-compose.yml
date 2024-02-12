@@ -15,7 +15,10 @@ services:
     depends_on:
       - consul
       - jaeger
-      
+    volumes:
+      - /home/aymen/Desktop:/usr/src/app # mount the project directory
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
   departement:
     image: aymena26/dep:1

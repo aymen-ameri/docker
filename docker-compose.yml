@@ -2,14 +2,12 @@ version: '3'
 
 services:
   nest:
-    build: 
-      context: /home/aymen/Desktop/nest
-      dockerfile: Dockerfile
-    container_name: nest_dev
+    image: nest:1  # Replace with your image name and tag
+    container_name: nest
     volumes:
-      - /home/aymen/Desktop/nest:/usr/src/app
+      - /home/aymen/Desktop/nest:/usr/src/app  # Mount the project directory
     ports:
-      - "3002:3002"
+      - "3002:3002"  # Map the ports
     depends_on:
       - consul
       - jaeger

@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  nestjs-app:
-    build: .
+ nestjs:
+     image: aymena26/nest:1
     container_name: nest
     volumes:
-      - /home/aymen/Desktop/nest3-main:/usr/src/app
+      - /home/aymen/Desktop/nest:/usr/src/app
     ports:
       - "3002:3002"
     environment:

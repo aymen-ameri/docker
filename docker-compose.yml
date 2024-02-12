@@ -6,8 +6,8 @@ services:
       context: ./home/aymen/Desktop/nest
       dockerfile: Dockerfile
     container_name: nest_dev
-      volumes:
-      - /home/aymen/Desktop:/usr/src/app
+    volumes:
+      - /home/aymen/Desktop:/usr/src/app # mount the project directory
     ports:
       - "3002:3002"
     depends_on:

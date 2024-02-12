@@ -1,13 +1,4 @@
-version: '3'
-services:
-  user:
-    image: aymena26/user:1
-    ports:
-      - "9003:9003"
-    depends_on:
-      - consul
-      - jaeger
-      
+version: '3'    
   services:
   nest:
     build:
@@ -51,7 +42,13 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
-
+  user:
+    image: aymena26/user:1
+    ports:
+      - "9003:9003"
+    depends_on:
+      - consul
+      - jaeger
   grafana:
     image: grafana/grafana:latest
     ports:

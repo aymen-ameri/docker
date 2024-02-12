@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nest:
-    image: nest:1  # Replace with your image name and tag
+    image: aymena26/nest:1
     container_name: nest
     volumes:
       - /home/aymen/Desktop/nest:/usr/src/app  # Mount the project directory

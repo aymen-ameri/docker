@@ -19,7 +19,7 @@ services:
       - consul
       - jaeger
     volumes:
-      - ./target:/app  # Mount the target directory to /app in the container
+      - ./departement:/app  # Mount the target directory to /app in the container
     environment:
       - SPRING_PROFILES_ACTIVE=dev
 

@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: nest_dev
     volumes:
-      - ./home/aymen/Desktop/nest:/usr/src/app
+      - /home/aymen/Desktop/nest:/usr/src/app
     ports:
       - "3002:3002"
     depends_on:

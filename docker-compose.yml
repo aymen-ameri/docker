@@ -18,12 +18,14 @@ services:
       
 
   departement:
-    image: aymena26/dep:1
-    ports:
-      - "9001:9001"
-    depends_on:
-      - consul
-      - jaeger
+  image: aymena26/dep:1
+  ports:
+    - "9001:9001"
+  depends_on:
+    - consul
+    - jaeger
+  volumes:
+    - ./home/aymen/Desktop/micro/departement/code:/app
 
   api:
     image: aymena26/apigat:1

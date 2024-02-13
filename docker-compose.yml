@@ -1,18 +1,29 @@
 version: '3'
-
 services:
- 
- departement:
+  user:
+    image: aymena26/user:1
+    ports:
+      - "9003:9003"
+    depends_on:
+      - consul
+      - jaeger
+      
+  nest:
+    image: aymena26/nest:1
+    ports:
+      - "3002:3002"
+    depends_on:
+      - consul
+      - jaeger
+      
+
+  departement:
     image: aymena26/dep:1
     ports:
       - "9001:9001"
     depends_on:
       - consul
       - jaeger
-    volumes:
-      - ./departement:/app  # Mount the target directory to /app in the container
-    environment:
-      - SPRING_PROFILES_ACTIVE=dev
 
   api:
     image: aymena26/apigat:1
@@ -33,14 +44,6 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
-
-  user:
-    image: aymena26/user:1
-    ports:
-      - "9003:9003"
-    depends_on:
-      - consul
-      - jaeger
 
   grafana:
     image: grafana/grafana:latest
